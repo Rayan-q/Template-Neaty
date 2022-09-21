@@ -1,0 +1,680 @@
+:root {
+    --main-color: #006599;
+    --hover-color: #f7ef00;
+    --main-transition: 0.4s;
+    --section-padding: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: white
+    ;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* First Title */
+.title-1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto 80px;
+    color: black;
+    background-color: var(--hover-color);
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 600;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.title-1::before,
+.title-1::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.title-1::before {
+    left: 0px;
+}
+.title-1::after {
+    right: 0px;
+}
+.title-1:hover::before {
+    z-index: -2;
+    animation: go-right 0.4s linear forwards;
+}
+.title-1:hover::after {
+    z-index: -2;
+    animation: go-left 0.4s linear forwards;
+}
+.title-1:hover {
+    color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+    animation: alter var(--main-transition) linear;
+    transition-delay: 0.3s;
+}
+/* Second Title */
+.title-2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto 80px;
+    color: white;
+    background-color: var(--main-color);
+    border: 2px solid var(--hover-color);
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 600;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.title-2::before,
+.title-2::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.title-2::before {
+    left: 0px;
+}
+.title-2::after {
+    right: 0px;
+}
+
+.title-2:hover::before {
+    z-index: -2;
+    animation: go-right 0.7s linear forwards;
+    background-color: white;
+}
+.title-2:hover::after {
+    z-index: -2;
+    animation: go-left 0.7s linear forwards;
+    background-color: white;
+}
+.title-2:hover {
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    animation: alter var(--main-transition) linear;
+    transition-delay: 0.3s;
+}
+/* Third Title */
+.title-3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto 80px;
+    color: var(--main-color);
+    background-color: white;
+    border: 4px solid var(--hover-color);
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 600;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+    overflow: hidden;
+}
+.title-3::before,
+.title-3::after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.title-3::before {
+    left: 0px;
+}
+.title-3::after {
+    right: 0px;
+}
+.title-3:hover::before {
+    z-index: -2;
+    animation: go-right 0.7s linear forwards;
+    background-color: var(--main-color);
+}
+.title-3:hover::after {
+    z-index: -2;
+    animation: go-left 0.7s linear forwards;
+    background-color: var(--main-color);
+}
+.title-3:hover {
+    color: white;
+    animation: alter var(--main-transition) linear;
+    transition-delay: 0.3s;
+}
+@keyframes go-right {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        left: 0;
+        border-radius: 0%;
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes go-left {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        right: 0;
+        border-radius: 0%;
+        width: 100%;
+        height: 100%;
+    }
+}
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Meduim Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Larg Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Small */
+@media (min-width: 768px) {
+    .container  {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+}
+}
+  /* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1185px;
+    }
+}
+
+/* Start heading structure */
+header {
+    color: white;
+    background-color: var(--main-color);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 60px;
+}
+header .container .img-holder{
+    width: 52px;
+}
+
+header .container .img-holder img{
+    max-width: 100%;
+}
+
+header .container .img-holder h2{
+    color: white;
+    font-size: 18px;
+    margin: -6px 0 4px;
+}
+header .container nav {
+    flex: 1 1 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .container nav .toggle-menu {
+    color: white;
+    transition: var(--main-transition);
+}
+@media (min-width: 768px) {
+    header .container nav .toggle-menu {
+        display: none;
+    }
+}
+header .container nav .toggle-menu:hover {
+    transform: rotate(90deg);
+}
+header .container nav .toggle-menu:hover + .main-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 4;
+    top: 104%;
+    width: 100%;
+    background-color: var(--main-color);
+    left: 0;
+}
+header .main-nav {
+    display: flex;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    header .main-nav {
+        display: none;
+    }
+}
+header .main-nav li a.active {
+    color: var(--hover-color);
+    text-shadow: -2px 2px 2px black;
+}
+header .main-nav li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: white;
+    transition: var(--main-transition);
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    header .main-nav li a {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 60px;
+        padding: 0 15px;
+        font-size: 19px;
+        color: white;
+        border-bottom: 1px solid white;
+        transition: var(--main-transition);
+        overflow: hidden;
+    }
+}
+header .main-nav li a:hover {
+    color: var(--hover-color);
+    text-shadow: -2px 2px 2px black;
+}
+header .main-nav li a::before {
+    position: absolute;
+    content: "";
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--hover-color);
+    left: -100%;
+    bottom: 0;
+    transition: var(--main-transition);
+}
+header .main-nav li a::after {
+    position: absolute;
+    content: "";
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #f4ef5e36;
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+header .main-nav li a:hover::before,
+header .main-nav li a:hover::after {
+    left: 0;
+}
+/* End heading structure */
+/* Start landing structure */
+.landing {
+    min-height: 91vh;
+    background-image: url("../imgs/neaty-01.jpg");
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(154 101 0 / 20%);
+}
+.landing .text {
+    position: absolute;
+    max-width: 600px;
+    top: 50%;
+    left: 8%;
+    padding: 20px;
+    transform: translateY(-50%);
+    background-color: rgb(0 101 153 / 70%);
+    text-shadow: -3px 3px 2px black;
+}
+.landing .text h2 {
+    font-size: 42px;
+    color: var(--hover-color);
+    margin: 0;
+}
+@media (max-width: 683px) {
+    .landing .text h2 {
+        font-size: 32px;
+    }
+}
+.landing .text p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    padding-top: 10px;
+    margin: 0;
+}
+/* End landing structure */
+/* Start about page structure */
+.about {
+    padding: var(--section-padding) 0px;
+}
+.about .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about .container .img-holder {
+    flex: 0 1 30%;
+}
+@media (max-width: 1200px) {
+    .about .container .img-holder {
+        display: none;
+    }
+}
+.about .container .img-holder img {
+    max-width: 100%;
+}
+.about .container .text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 69%;
+    justify-content: space-around;
+}
+@media (max-width: 1200px) {
+    .about .container .text {
+        flex: 100%;
+    }
+}
+.about .container .text h4 {
+    font-size: 42px;
+    font-weight: 200;
+    color: var(--main-color);
+    width: fit-content;
+    margin: 0 auto;
+}
+.about .container .text p {
+    background-color: rgb(0 101 153 / 70%);
+    font-size: 24px;
+    padding: 26px 20px;
+    margin: 16px 20px 0;
+
+}
+.about .container button {
+    padding: 20px 68px;
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: 200;
+    text-transform: capitalize;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: var(--main-transition);
+}
+.about .container button:hover {
+    color: var(--hover-color);
+    background-color: #0097e2;
+}
+/* End about page structure */
+/* Start first gallery structure */
+.gallery-1 {
+    padding: var(--section-padding) 0;
+    background-color: var(--main-color);
+}
+.gallery-1 .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.gallery-1 .container .box {
+    position: relative;
+    padding: 10px;
+    background-color: var(--hover-color);
+    transition: var(--main-transition);
+}
+.gallery-1 .container .box:hover {
+    background-color: white;
+}
+.gallery-1 .container .box .img-holder {
+    position: relative;
+}
+.gallery-1 .container .box .img-holder::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0%;
+    background-color: rgb(0 0 0 / 20%);
+    transition: var(--main-transition);
+    z-index: 4;
+}
+.gallery-1 .container .box:hover .img-holder::before {
+    width: 100%;
+    height: 100%;
+}
+.gallery-1 .container .box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+/* End first gallery structure */
+/* Start second gallery structure */
+.gallery-2 {
+    padding: var(--section-padding) 0;
+}
+.gallery-2 .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.gallery-2 .container .box {
+    position: relative;
+    padding: 10px;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+.gallery-2 .container .box:hover {
+    background-color: var(--hover-color);
+}
+.gallery-2 .container .box .img-holder {
+    position: relative;
+}
+.gallery-2 .container .box .img-holder::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 0%;
+    background-color: rgb(255 255 255 / 40%);
+    transition: var(--main-transition);
+    z-index: 4;
+}
+.gallery-2 .container .box .img-holder::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 0%;
+    background-color: rgb(255 255 255 / 40%);
+    transition: var(--main-transition);
+    z-index: 4;
+}
+.gallery-2 .container .box:hover .img-holder::before {
+    height: 100%;
+}
+.gallery-2 .container .box:hover .img-holder::after {
+    height: 100%;
+}
+.gallery-2 .container .box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+/* End second gallery structure */
+/* Start conatct structure */
+.contact {
+    padding: 80px 0 20px;
+    background-color: var(--main-color);
+}
+.contact .container {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .contact .container {
+        flex-direction: column-reverse;
+        max-width: 500px;
+    }
+}
+.contact .container form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 560px;
+}
+.contact .container form input {
+    height: 44px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-transform: capitalize;
+    background-color: white;
+    color: var(--main-color);
+    border-radius: 12px;
+}
+.contact .container form input:focus,
+.contact .container form textarea:focus {
+    outline: none;
+}
+.contact .container form textarea {
+    height: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-transform: capitalize;
+    resize: none;
+    background-color: white;
+    color: var(--main-color);
+    border-radius: 12px;
+}
+.contact .container form input[type="button"] {
+    color: white;
+    background-color: var(--main-color);
+    border: 2px solid var(--hover-color);
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+.contact .container form input[type="button"]:hover {
+    color: var(--main-color);
+    background-color: white;
+}
+.contact .container .text {
+    flex: 4 1 500px;
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    .contact .container .text {
+        flex-basis: 280px;
+        margin-left: 0;
+    }
+}
+.contact .container .text p {
+    color: var(--main-color);
+    background-color: white;
+    padding: 10px;
+    border: 2px solid var(--hover-color);
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 1.8rem;
+    transition: var(--main-transition);
+}
+.contact .container .text p:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+/* End conatct structure */
+/* Start footer structure */
+footer {
+    display: flex;
+    justify-content: center;
+}
+footer p {
+    flex: 1 1;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 20px;
+    margin: 0;
+    background-color: var(--main-color);
+    border-top: 3px solid white;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+footer p a {
+    color: var(--hover-color);
+    text-transform: lowercase;
+}
+/* End footer structure */
